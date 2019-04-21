@@ -103,11 +103,8 @@ $govuk-footer-link-hover: #171819;
     border-bottom: 1px solid  #EAEAEA ;
   }
 
-// ---------------------------------------- BODY ------------------------------------------------//
+//---------------------------------------- BREADCRUMBS ------------------------------------------------//
 
-.govuk-template {
-    background-color: $se-footer-background; // to unify the background colour of the footer even if the page is "too short" ) (was white below otherwise
-}
 .se-breadcrumb {
     background-color: $se-breadcrumb;
     padding: 10px; //for smaller screens
@@ -125,6 +122,68 @@ $govuk-footer-link-hover: #171819;
         color: white;
         text-decoration : underline
     }
+}
+
+// changes from the original code in node-modules>govuk-frontend>components>breadcrumbs>_breadcrumbs.scss
+
+.govuk-breadcrumbs {
+    @include govuk-font($size: 16);
+    @include govuk-text-colour;
+
+    margin-top: govuk-spacing(3);
+    margin-bottom: govuk-spacing(2);
+  }
+
+  .govuk-breadcrumbs__list {
+    @include govuk-clearfix;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .govuk-breadcrumbs__list-item {
+    display: inline-block;
+    position: relative;
+    margin-bottom: govuk-spacing(1);
+    margin-left: 0; // was margin-left: govuk-spacing(2);
+    padding-left: govuk-spacing(2); //+ $chevron-altitude-calculated;
+      @include mq ($from: tablet) { // added to delete the margin on small screens
+        margin-left: govuk-spacing(2);
+      }
+    float: left;
+
+    //replaceing the chevron by a vertical bar
+    &:before {
+      content: "|";
+      //add padding on the right too - wasn't there - also makes if longer and thinner
+      margin-right: 0; // was margin-right: govuk-spacing(2);
+      padding-right: govuk-spacing(2); 
+      font-size: 24px;
+      font-weight:200;
+      @include mq ($from: tablet) { // added to delete the margin on small screens
+        margin-right: govuk-spacing(2);
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+      padding-left: 0;
+
+      &:before {
+        content: "|"; // was none;
+        // display: none; 
+        //added: 
+        color: #3a817e;
+        font-size: 24px;
+        font-weight:200;
+      }
+    }
+  }
+
+// ---------------------------------------- BODY ------------------------------------------------//
+
+.govuk-template {
+    background-color: $se-footer-background; // to unify the background colour of the footer even if the page is "too short" ) (was white below otherwise
 }
 
 .heroh1blue {

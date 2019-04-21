@@ -5,6 +5,19 @@
   SE Prototype
 {% endblock %}
 
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -20,6 +33,9 @@
       <ul class="govuk-list govuk-list--bullet se">
         <li>add the favicon in the images, and use it in a copy of the special layout for SE</li>
         <li>add some code to customise the header and the footer in the layout, and some CSS in se.scss</li>
+        <li>for the breadcrumbs, I have to modify 2 macros: the general template in node-modules>govuk-frontend>template.njk to be able to declare a block called "postHeader" 
+        to be generated just after the header, and the existing macro for the breadcrumbs so I can add a specific se class in: node-modules>govuk-frontend>components>breadcrumbs>template.njk 
+        <span style="color: #b10e1e"> Note that these changes could disappear if you run a "npm install"</span></li>
       </ul>
 
      
