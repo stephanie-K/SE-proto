@@ -128,7 +128,7 @@ $govuk-footer-link-hover: #171819;
 
 .govuk-breadcrumbs {
     @include govuk-font($size: 16);
-    @include govuk-text-colour;
+    // @include govuk-text-colour;
     margin-top: govuk-spacing(3);
     //margin-bottom: govuk-spacing(2);
   }
