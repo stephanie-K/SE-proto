@@ -1,0 +1,88 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Make it to Market grant
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Funding and grants",
+      href: "/funding.html"
+    },
+    {
+      text: "Growing your business",
+      href: "/growing.html"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1grey">Make it to Market grant</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="se">
+  <h2>Funding to enter international markets</h2>
+  <p>Our Make it to Market grant can help you get your products or services ready to be exported to international markets.</p>
+  <p>We can contribute up to 70% of eligible costs between £2,000 and £5,000.</p>
+  
+  <h2>What can Make it to Market be used for?</h2>
+    <ul>
+      <li>New projects when product is beyond research and close to market</li>
+      <li>Adapting an existing product to meet overseas regulations for a new international market</li>
+      <li>External expert advice on technical feasibility or product modification</li>
+      <li>Product-based market research, including development of samples</li>
+      <li>Intellectual property (IP), licensing and brand protection (excluding registration fees), provided IP-related costs have an international focus. IP-related costs can make up no more than 50% of the total eligible project costs.</li>
+      <li>Professional guidance on overseas contracts with suppliers, intermediaries or manufacturers</li>
+      <li>Translation costs relating to product adaptation and launch</li>
+      <li>Overseas travel costs, provided they do not make up more than 20% of the total eligible project costs</li>
+    </ul>
+
+  <h2>Am I eligible?</h2>
+    <p>To be eligible your company:</p>
+      <ul>
+        <li>Must be based in Scotland and be registered for VAT</li>
+        <li>Must be developing a product or service for international markets</li>
+        <li>Must not have commissioned any work or spent any money on the project activities that the grant would fund</li>
+    </ul>
+<h3>Other criteria</h3>
+  <ul>
+    <li>You can finance at least 30% of project costs</li>
+    <li>You can pay project costs upfront</li>
+    <li>You can demonstrate the benefits of the project</li>
+    <li>Your company must not have an SE account manager or Business Gateway growth pipeline adviser</li>
+    <li>Funding won't be used for exhibition or trade event costs</li>
+    <li>Funding won't be used for capital expenditure such as IT equipment</li>
+    <li>You haven't received Make it to Market or By Design funding in the past</li>
+    <li>Your company is an SME (fewer than 250 employees and a turnover of less than&nbsp;€50m or a balance sheet of less than €43m)</li>
+    <li>Your company must have a business bank account which will be used for expenditure relating to the grant</li>
+  </ul>
+<p><a rel="noopener" href="http://ec.europa.eu/growth/smes/business-friendly-environment/sme-definition/" target="_blank">EU Commission's definition of an SME</a></p>
+
+
+  <h2 class="govuk-!-margin-top-9">How to apply</h2>
+  <p>Need help to take your products or service to international markets? Ask about our funding and support.</p>
+  
+  {% from "button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Submit an enquiry",
+    classes: "govuk-!-margin-bottom-4 , govuk-!-margin-top-2 , button-se , govuk-button--start",
+    href: "/make-it-to-market-grant-submit.html"
+  }) }}
+
+<p>Alternatively, you can give us a call on: <strong style="font-size: 19px">0300 013 3385</strong></p>
+
+</div>
+
+
+{% endblock %}

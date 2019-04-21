@@ -1,0 +1,180 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Contact us
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1grey">Contact us</div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="se">
+<p>Simply enter your information in the fields below and one of our helpful team will be in touch shortly.</p>
+<p>Alternatively, you can give us a call on: <strong style="font-size: 19px">0300 013 3385</strong></p>
+<br><br>
+</div>
+{% from "select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "enquiry-type",
+  name: "enquiry-type",
+  label: {
+    text: "What is your enquiry about?"
+  },
+  items: [
+    {
+      value: "choose",
+      text: "Choose from the following:",
+      selected: true
+    },
+    {
+      value: "funding",
+      text: "Fundings and grants"
+    },
+    {
+      value: "events",
+      text: "Events"
+    },
+    {
+      value: "support",
+      text: "Expert support"
+    },
+    {
+      value: "improve",
+      text: "Improving business practices"
+    },
+    {
+      value: "product",
+      text: "Product development"
+    },
+    {
+      value: "feedback",
+      text: "Provide feedback"
+    },
+    {
+      value: "foi",
+      text: "Freedom of information"
+    },
+    {
+      value: "website",
+      text: "Website technical problem"
+    },
+    {
+      value: "none",
+      text: "None of the above"
+    }
+  ]
+}) }}
+{% from "input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Full name"
+  },
+  classes: "govuk-input--width-20",
+  id: "name",
+  name: "name"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Company's name"
+  },
+  classes: "govuk-input--width-20",
+  id: "companyname",
+  name: "companyname"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Postcode of your company's registered address"
+  },
+  classes: "govuk-input--width-10",
+  id: "companypostcode",
+  name: "companypostcode"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Email address"
+  },
+  id: "email",
+  name: "email",
+  type: "email",
+  autocomplete: "email",
+  classes: "govuk-input--width-20",
+  attributes: {
+    spellcheck: "false"
+  }
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Phone number"
+  },
+  id: "telephone-number",
+  name: "telephone-number",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-input--width-20"
+}) }}
+
+{% from "textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "message",
+  id: "message",
+  rows: "8",
+  label: {
+    text: "Your message for us"
+  }
+}) }}
+
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "acceptterms",
+  name: "acceptterms",
+  classes: "govuk-checkboxes--small",
+  items: [
+    {
+      value: "accept",
+      text: "I accept the terms of the privacy policy"
+    }
+  ]
+}) }}
+
+{% from "button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Submit enquiry",
+  classes: "govuk-!-margin-bottom-9 , govuk-!-margin-top-9 , button-se",
+  href: "/not-ready.html"
+}) }}
+
+<div class="se">
+<p>The personal details and information provided will be used to <a rel="noopener"  href="/privacy.html" target="_blank" title="How we use your information to process your enquiry">answer your enquiry and keep you updated on its progress</a>.</p>
+<p>They will be stored on our system which is <a rel="noopener" href="/privacy.html" target="_blank" title="Collecting and sharing your data">shared with other public sector bodies</a>.</p>
+<p>By ticking the box and clicking submit you confirm that you have read and agreed to the terms of our <a rel="noopener" href="/privacy.html" target="_blank" title="How we collect, use, share and look after your personal information">privacy notice</a>.</p>
+<p>Scottish Enterprise HQ<br>Atrium Court<br>50 Waterloo Street<br>Glasgow<br>G2 6HQ</p>
+</div>
+{% endblock %}
+
+
+
+

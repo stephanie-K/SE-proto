@@ -1,0 +1,82 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Funding and grants
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Funding and grants",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1blue">Funding and grants</div>
+  <p class="heropblue">Trying to get your business off the ground or looking to grow or scale up an existing business? Funding can go a long way to helping you get there. Know your options and how to access the right type of finance with our help.</p>
+
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full card">
+      <img src="https://se-live-se-web.azureedge.net/remote.axd/se-live-se-storage.azureedge.net//media/2668/icon-starting-business.png?quality=70" alt="" class="center" width="57" height="57">
+      <h3>Starting a business?</h3>
+        <p>To get started you’ll need an up-to-date business plan outlining your growth potential and business needs.</p>
+        <p>If you don’t have one, Business Gateway can help you with this.</p>
+        <br>
+        {% from "button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "HELP ME WITH MY BUSINESS PLAN",
+          classes: "govuk-!-margin-bottom-4 , govuk-!-margin-top-2 , button-se",
+          href: "/not-ready.html"
+        }) }}
+    </div>
+    <div class="govuk-grid-column-full card">
+      <img src="https://se-live-se-storage.azureedge.net/cache/7/b/7/1/c/8/7b71c8b987923e3055c4054936f01be00bfd2bd7.png" alt="" class="center" width="57" height="57">
+      <h3>Growing your business</h3>
+      <p>At this stage you should already have an up-to-date business plan. Before seeking outside funding, weigh up your options.</p>
+      <p>Consider what finances you already have in place to grow your business.&nbsp;Could they work better for you?</p>
+        {% from "button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "ADVICE ABOUT GRANTS",
+          classes: "govuk-!-margin-bottom-4 , govuk-!-margin-top-2 , button-se",
+          href: "/growing.html"
+        }) }}
+    </div>
+  </div>
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full card">
+      <img src="https://se-live-se-web.azureedge.net/remote.axd/se-live-se-storage.azureedge.net//media/2644/icon-finance.png?quality=70" alt="" class="center" width="57" height="57">
+      <h3>Accessing finance</h3>
+       <p>Securing growth capital is critical to the long-term success of any business.</p>
+        <p>By stimulating the supply of investor finance, we can help you seek funds for research and development and connect you to co-investment opportunities for market expansion.</p>
+        {% from "button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "KNOW YOUR FINANCE OPTIONS",
+          classes: "govuk-!-margin-bottom-4 , govuk-!-margin-top-2 , button-se",
+          href: "/not-ready.html"
+        }) }}
+    </div>
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-9">
+      <a rel="noopener" href="https://www.gov.scot/policies/european-structural-funds/" target="_blank"><img src="{{ asset_path }}/images/EUfunding.png"alt="" class="center govuk-!-margin-top-9" width="204" height="102">
+    </div>
+    </div>
+
+
+
+
+</div>
+{% endblock %}
+

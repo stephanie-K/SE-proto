@@ -1,0 +1,132 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Growing your business
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Funding and grants",
+      href: "/funding.html"
+    },
+    {
+      text: "Growing your business",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1blue">Growing your business</div>
+  <p class="heropblue">Securing investment is a major milestone for companies like yours wanting to grow to the next stage. But, remember it’s not just about the money. Support and advice can go a long way.</p>
+
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <h2>What is a grant?</h2>
+      <p>Grants are normally available to do specific things, for example to develop a new product. You'll need to apply for a grant before your project has started.</p>
+      <p>Grants should only be used as an additional source of funding – not to fund an entire project.</p>
+      <p>The grants available to help your idea or business will depend on:</p>
+      <ul>
+        <li>The kind of idea or business you have – sometimes called your business 'sector'</li>
+        <li>The potential of your idea or size of your business</li>
+        <li>What you intend to spend the grant on</li>
+        <li>Where your business is based</li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <img src="{{ asset_path }}/images/growing-train.jpg" alt="" class="se">
+    </div>
+  </div>
+
+    <div class="govuk-grid-row govuk-!-margin-top-9">
+      <div class="govuk-grid-column-one-half">
+        <img src="{{ asset_path }}/images/growing-office.jpg" alt="" class="se">
+      </div>
+      <div class="govuk-grid-column-one-half">
+          <h2>How grants are paid?</h2>
+          <p>Most grants are paid 'retrospectively'. This means you'll need to pay out money upfront and reclaim the grant money later.</p>
+          <p>Some grants might pay you a percentage of the money up front and others will have terms you'll be expected to meet, for example a job creation target or deadline.</p>
+          <h3>Applying for a grant</h3>
+          <p>Each grant will have a different application process, although there will be common things you'll need to show, like how the grant will cover shortfall in funding and what other efforts you've made to raise funding.</p>
+          <p>The main grant funding available in Scotland is to help ideas or businesses that:</p>
+          <ul>
+            <li>Will bring social or economic benefits, for example creating jobs</li>
+            <li>Are collaborative projects leading to new technology or ideas</li>
+            <li>Are involved in research and development</li>
+          </ul>
+      </div>
+    </div>
+
+  <h2 class="govuk-!-margin-top-9" style="text-align: center">Our most popular grants</h2> 
+
+  <div class="govuk-grid-row govuk-!-margin-top-9">
+    <div class="govuk-grid-column-one-third">
+        <h3>RSA grants</h3>
+        <p>Available to help projects that will create or protect jobs in Scotland.</p><br>
+        <p><a href="/not-ready.html" class="button-se-secondary">fund projects in scotland</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3>R&D grants</h3>
+        <p>Available to help projects that will lead to innovative new products, processes and services.</p>
+        <p><a href="/not-ready.html" class="button-se-secondary">finance your research</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3>SMART: SCOTLAND grants</h3>
+        <p>Available to help projects that will create or protect jobs in Scotland.</p><br>
+        <p><a href="/not-ready.html" class="button-se-secondary">test your ideas</a></p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-one-third">
+        <h3>European funding</h3>
+        <p>We support Scottish companies to find partners and apply for European funding through Enterprise Europe Network Scotland.</p>
+        <p><a href="/not-ready.html" class="button-se-secondary">scottish eu funding portal</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3>By Design grants</h3>
+        <p>Available to help you improve design in your business.</p><br><br>
+        <p><a href="/not-ready.html" class="button-se-secondary">improve design</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3>Make it to Market grant</h3>
+        <p>Available to help you get your products or services ready to be exported to international markets.</p><br>
+        <p><a href="/make-it-to-market-grant.html" class="button-se-secondary">enter international markets</a></p>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-one-third">
+        <h3>Innovate UK</h3>
+        <p>We support Scottish companies through Enterprise Europe Network Scotland to apply for Innovate UK funding.</p>
+        <p><a href="/not-ready.html" class="button-se-secondary">what is innovate uk?</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3>Workplace Innovation Fund</h3>
+        <p>Available to help you introduce new and innovative workplace practices.</p><br>
+        <p><a href="/not-ready.html" class="button-se-secondary">cultivate workplace ideas</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h3>Collaborative Innovation Fund</h3>
+        <p>Available to SMEs innovating in the Scottish food and drink industry.</p>
+        <p><a href="/not-ready.html" class="button-se-secondary">partner with others</a></p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+

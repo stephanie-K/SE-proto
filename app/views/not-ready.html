@@ -1,0 +1,31 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Not ready
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1blue">This page is not ready ... Sorry</div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <img src="{{ asset_path }}/images/keep-calm-i-m-not-ready-yet-1.png" alt="" class="se">
+  </div>
+</div>
+{% endblock %}

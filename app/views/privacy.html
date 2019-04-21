@@ -1,0 +1,56 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Privacy notice
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Privacy notice",
+      classes: "govuk-!-font-weight-bold"
+    },
+    {
+      text: "Cookie policy",
+      href: "/cookies.html"
+    },
+    {
+      text: "Terms of use",
+      href: "/terms.html"
+    },
+    {
+      text: "Accessibility",
+      href: "/a11y.html"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1blue">Privacy notice</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="se">
+  <h2>Your personal information</h2>
+  <h3>Who we are</h3>
+  <p>Scottish Enterprise (SE) is Scotland's national economic development agency and a non-departmental public body of the Scottish Government. We have our headquarters at Atrium Court, 50 Waterloo Street, Glasgow G2 6HQ, United Kingdom, and operate our business from locations within Scotland and worldwide.</p>
+  <p>The privacy notice applies when you visit our website, provide any personal information through this website, when we provide services to you or when you have asked to receive marketing from us (regardless of where you are located). It also applies where you are a supplier to us. The privacy notice will also tell you about your privacy rights and how the law protects you.</p>
+  <h3>Letting us know about changes to your personal information</h3>
+  <p>It is important that the personal information that we hold about you is accurate and current. Please let us know if your personal information changes during your relationship with us by contacting us.</p>
+  <p><a  href="/contact-us.html" title="Contact us">Contact us</a></p>
+  <p>Personal information, or personal data, means any information about an individual from which that person can be identified. Anything we do with your personal information (from the point at which we collect it until we delete it from our systems) is called processing.</p>
+  <h3>Further information</h3>
+  <p>This website is not intended for children and we do not knowingly collect data relating to children.</p>
+  <p>It is important that you read this privacy notice together with any other privacy notice or fair processing notice we may provide on specific occasions when we are collecting or processing personal information about you so that you are fully aware of how and why we are using your data. This privacy notice supplements the other notices and is not intended to override them.</p>
+  <h3>Changes to our privacy notice</h3>
+  <p>This is the current version of our privacy notice. It was last updated on 24 May 2018.</p>
+</div>
+{% endblock %}

@@ -27,7 +27,16 @@ classes: "se-breadcrumb"
 
         <span class="govuk-caption-xl">Based on GOV.UK Prototype Kit - {{releaseVersion}}</span>
       </h1>{{releaseVersion | log }}
-      <h2 class="govuk-heading-m se">
+
+      <p style="color: #b10e1e">To come back here at any time, click/tap:</p>
+           <ul class="govuk-list govuk-list--bullet se">
+            <li>on the logo on the top left</li>
+            <li>"Home" in the breadcrumbs</li>
+           </ul>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-top: 1px solid #3a817e">
+
+      <h2 class="govuk-heading-m se govuk-!-margin-top-4">
         Changes done:
       </h2>
       <ul class="govuk-list govuk-list--bullet se">
@@ -36,9 +45,13 @@ classes: "se-breadcrumb"
         <li>for the breadcrumbs, I have to modify 2 macros: the general template in node-modules>govuk-frontend>template.njk to be able to declare a block called "postHeader" 
         to be generated just after the header, and the existing macro for the breadcrumbs so I can add a specific se class in: node-modules>govuk-frontend>components>breadcrumbs>template.njk 
         <span style="color: #b10e1e"> Note that these changes could disappear if you run a "npm install"</span></li>
+        <li>create general page: <a href="/a11y.html" >Accessibility</a> , <a href="/privacy.html" >Privacy notice</a> , <a href="/cookies.html">Cookies policy</a> , <a href="/terms.html">Terms of use</a></li> 
+        <li>create a form for <a href="/contact-us.html">Contact us</a></li>
+        <li>create 3 example pages: <a href="/make-it-to-market-grant.html">Make it to Market grant</a> , and two pages to reach it <a href="/growing.html">Growing your business</a> and <a href="/funding.html">Funding and grants</a></li>
+        <li>create a <a href="/not-ready.html">Not ready page</a>
       </ul>
 
-     
+     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-top: 1px solid #3a817e">
 
       <h2 class="govuk-heading-m se">Examples and documentation</h2>
 

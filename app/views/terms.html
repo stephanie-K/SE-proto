@@ -1,0 +1,52 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Terms of use
+{% endblock %}
+
+
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Privacy notice",
+      href: "/privacy.html"
+    },
+    {
+      text: "Cookie policy",
+      href: "/cookies.html"
+    },
+    {
+      text: "Terms of use",
+      classes: "govuk-!-font-weight-bold"
+    },
+    {
+      text: "Accessibility",
+      href: "/a11y.html"
+    }
+    
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1blue">Terms of use</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="se">
+<h2>Scottish Enterprise terms of use for websites</h2>
+<p>These terms of use (together with the privacy policy and the cookies policy) tell you the terms on which you may use this website. By using this website, you confirm that you accept these terms of use and that you agree to comply with them. If you do not agree to these terms of use, you are not permitted to use this website.</p>
+<p><em> There is more on the original website</em></p>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Accessibility
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Privacy notice",
+      href: "/privacy.html"
+    },
+    {
+      text: "Cookie policy",
+      href: "/cookies.html"
+    },
+    {
+      text: "Terms of use",
+      href: "/terms.html"
+    },
+    {
+      text: "Accessibility",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1blue">Accessibility</div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="se">
+    <p>Scottish Enterprise is committed to making its services accessible to everyone who could benefit from them, irrespective of any disability they may have.<br><br>We have designed this website to adhere to the <a rel="noopener" href="https://www.w3.org/TR/WCAG21/" target="_blank">Web Content Accessibility Guidelines 2.1</a>&nbsp;at double A level. We also test our websites with disabled users to identify and address any issues.</p>
+    <p>If you have any difficulty using this website, please let us know. You can contact us using our <a href="/contact-us.html" title="Contact us">online feedback form</a>.</p>
+    <p>Or, if you prefer, you can contact us on:</p>
+    <ul>
+        <li><a href="mailto:enquiries@scotent.co.uk"><strong>enquiries@scotent.co.uk</strong></a></li>
+        <li>0300 013 3385 (calls charged at local rates)</li>
+        <li>0141 846 0200 from mobile phones or if outside Scotland</li>
+        <li>Minicom 0800 023 2071 - if you are deaf or hard of hearing (BT helpline 0800 731 1888)</li>
+    </ul>
+</div>
+{% endblock %}

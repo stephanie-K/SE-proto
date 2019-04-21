@@ -1,0 +1,52 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Cookies
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "Privacy notice",
+      href: "/privacy.html"
+    },
+    {
+      text: "Cookie policy",
+      classes: "govuk-!-font-weight-bold"
+    },
+    {
+      text: "Terms of use",
+      href: "/terms.html"
+    },
+    {
+      text: "Accessibility",
+      href: "/a11y.html"
+    }
+  ],
+classes: "se-breadcrumb"
+}) }}
+
+  <div class="heroh1blue">Cookie Policy</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="se">
+    <p>This website uses cookies to distinguish you from other users of this website. A cookie is a small file of letters and numbers that we store on your browser or the hard drive of your computer if you agree. Cookies contain information that is transferred to your computer's hard drive.</p>
+    <p>Cookies help Scottish Enterprise (“<strong>SE</strong>”, “<strong>us</strong>” or “<strong>we</strong>”) to provide you with a good experience when you browse our website and also allow us to improve our website. We assume that you are happy to receive all the cookies that your browser settings allow. You can change your cookie settings at any time.</p>
+    <p>We use the following cookies:</p>
+    <ul>
+      <li><strong>Strictly necessary cookies</strong> - These are cookies that are required for the operation of our website. They include, for example, cookies that enable you to log into secure areas of our website.</li>
+      <li><strong>Analytical / performance cookies</strong> - They allow us to recognise and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.</li>
+      <li><strong>Functionality cookies</strong> - These are used to recognise you when you return to our website. This enables us to personalise our content for you, greet you by name and remember your preferences (for example, your choice of language or region).</li>
+      <li><strong>Targeting cookies</strong> - These cookies record your visit to our website, the pages you have visited and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose.</li>
+    </ul>
+</div>
+{% endblock %}
