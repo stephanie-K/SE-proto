@@ -41,7 +41,7 @@
       <ul class="govuk-list govuk-list--bullet se">
         <li>add the favicon in the images, and use it in a copy of the special layout for SE:  layout_se.html</li>
         <li>add some code to customise the header and the footer in the layout, and some CSS in se.scss</li>
-        <li>for the breadcrumbs, I have to modify a macro the general template in node-modules>govuk-frontend>template.njk to be able to declare a block called "postHeader" 
+        <li>for the breadcrumbs, I have to modify the macro for the general template in node-modules>govuk-frontend>template.njk to be able to declare a block called "postHeader" 
         to be generated just after the header. For more advanced behaviour I would need to change the existing macro for the breadcrumbs to add specific se class in: node-modules>govuk-frontend>components>breadcrumbs>template.njk 
         <span style="color: #b10e1e"> Note that these changes could disappear if you run a "npm install"</span></li>
         <li>create general page: <a href="/a11y.html" >Accessibility</a> , <a href="/privacy.html" >Privacy notice</a> , <a href="/cookies.html">Cookies policy</a> , <a href="/terms.html">Terms of use</a></li> 
