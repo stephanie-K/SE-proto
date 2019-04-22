@@ -17,3 +17,9 @@ Read the [project principles](https://govuk-prototype-kit.herokuapp.com/docs/pri
 - for the **breadcrumbs**, I modified the macro for the general template in node-modules>govuk-frontend>template.njk to be able to declare a block called "postHeader" to be generated just after the header. For more advanced behaviour I would need to change the existing macro for the breadcrumbs to add specific se classes in node-modules>govuk-frontend>components>breadcrumbs>template.njk 
 - for the **change of template in govuk-frontend** to be taken into account, I need to change **gitignore** to push the changes in node_modules
 - to be able to deploy to Heroku, I commented a line of code in:  node_nmodules>browser-sync>dist>index.js / it's password protected
+
+
+##Some screenshots
+
+###whole screen to see the header and footer
+![whole screen](https://github.com/stephanie-K/SE-proto/docs/SE-branding-illustration1.png "whole screen")
