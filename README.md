@@ -19,7 +19,13 @@ Read the [project principles](https://govuk-prototype-kit.herokuapp.com/docs/pri
 - to be able to deploy to Heroku, I commented a line of code in:  node_nmodules>browser-sync>dist>index.js / it's password protected
 
 
-##Some screenshots
+## Some screenshots
 
-###whole screen to see the header and footer
-![whole screen](https://github.com/stephanie-K/SE-proto/docs/SE-branding-illustration1.png "whole screen")
+### Whole screen to see the header and footer
+![whole screen](https://github.com/stephanie-K/SE-proto/blob/master/docs/SE-branding-illustration1.png "whole screen")
+
+### Footer and change of button
+![Footer and change of button](https://github.com/stephanie-K/SE-proto/blob/master/docs/SE-branding-illustration2.png "Footer and change of button")
+
+### Mobile view
+![Mobile view](https://github.com/stephanie-K/SE-proto/blob/master/docs/SE-branding-illustration3.png "Mobile view")
