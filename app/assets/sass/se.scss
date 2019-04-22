@@ -188,7 +188,7 @@ $se-heading-darker-grey: #333;
         color: white;
         font-family: "Poppins", Arial, Helvetica, sans-serif;
         font-size: 18px;
-        padding: 48px 20px ;
+        padding: 48px 20px 0 20px;
         @include mq ($from: tablet) {
             padding-left: 100px;
             padding-right: 100px;
