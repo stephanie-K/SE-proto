@@ -36,7 +36,8 @@ $se-heading-darker-grey: #333;
   }
 
   .govuk-header__content {
-    margin-bottom: 20px; // to prevent the label "This is a prototype" to be in contact with the breadcrumbs on smaller screen when it wraps
+    margin-bottom: 15px; // to prevent the label "This is a prototype" to be in contact with the breadcrumbs on smaller screen when it wraps
+    padding-left: govuk-spacing(8);
     @include mq ($from: tablet) { // was desktop
       width: 50%; // was 66.66%
     }
@@ -47,11 +48,15 @@ $se-heading-darker-grey: #333;
   }
 // extra customisation
 .se-service-name {
-    font-size: 28px;
+    font-size: 20px;
     color: white; 
     background-color: $se-logo-green;
     padding: 2px 20px;
     font-weight: 600;
+    @include mq ($from: tablet) { 
+      font-size: 24px;
+    }
+
 }
 
 #logo-se:focus{
@@ -104,7 +109,7 @@ $se-heading-darker-grey: #333;
     color: white;
     //margin-bottom: govuk-spacing(2);
     background-color: $se-breadcrumb;
-    padding: 10px; //for smaller screens
+    padding: 5px; //for smaller screens
     @include mq ($from: desktop) { //for bigger screens
         padding: 10px 100px;
      } 
@@ -140,12 +145,12 @@ $se-heading-darker-grey: #333;
 
     //replacing the chevron by a vertical bar
     &:before {
-      content: "|";
+      content: "/";
       //add padding on the right too - wasn't there - also makes if longer and thinner
       margin-right: 0; // was margin-right: govuk-spacing(2);
       padding-right: govuk-spacing(2); 
       color: white;
-      font-size: 24px;
+      font-size: 20px;
       font-weight:200;
       @include mq ($from: tablet) { // added to delete the margin on small screens
         margin-right: govuk-spacing(2);
@@ -157,11 +162,11 @@ $se-heading-darker-grey: #333;
       padding-left: 0;
 
       &:before {
-        content: "|"; // was none;
+        content: "/"; // was none;
         // display: none; 
         //added: 
         color:#3a817e; // so we don't see it 
-        font-size: 24px;
+        font-size: 20px;
         font-weight:200;
       }
     }
