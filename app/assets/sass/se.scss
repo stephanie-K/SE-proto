@@ -18,7 +18,7 @@ $se-logo-blue: #1B3C7B;
 $se-logo-green: #4FAD46;
 $se-breadcrumb: #3a817e;
 $se-footer-background: #EAEAEA;
-$se-text-dark-grey: #666;
+$se-text-dark-grey: #555;
 $se-heading-darker-grey: #333;
 //---------------------------------------- HEADER ------------------------------------------------//
 
@@ -213,24 +213,35 @@ $se-heading-darker-grey: #333;
 
 
 .se {
+  h1 {
+    color: #333;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+}
     h2 {
         color: #333;
         font-family: "Poppins", Arial, Helvetica, sans-serif;
         font-size: 24px;
         font-weight: 500;
+        padding: 1.2em 0 0.5em 0;
     }
     h3 {
         color: #333;
         font-family: "Poppins", Arial, Helvetica, sans-serif;
         font-size: 20px;
         font-weight: 500;
+        padding: 1em 0 0.2em 0;
     }
-    p, ul, li {
+    p, ul, li, .govuk-details__summary-text, .govuk-details__text {
         color: #666;
         font-family: "Roboto", Arial, Helvetica, sans-serif;
         font-size: 16px;
         font-weight: 400;
         -webkit-font-smoothing: antialiased ; // seems to be needed otherwise p elements look thinner than list li
+    }
+    .govuk-details__summary-text {
+      color: #09759d;
     }
 
     ul {

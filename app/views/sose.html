@@ -1,0 +1,157 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  SoSE
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    }
+  ]
+}) }}
+
+  <div class="hero-se">South of Scotland Enterprise</div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="se">
+<h1>How to request funding support</h1>
+
+<ul>
+  <li><a href="#involve">What does this involve?</a></li>
+  <li><a href="#eligible">Am I eligible?</a></li>
+  <li><a href="#who">Who will look at my enquiry?</a></li>
+  <li><a href="#suitable">If my enquiry is suitable, what happen next?</a></li>
+  <li><a href="#yes">What happen if my funding is accepted?</a></li>
+  <li><a href="#no">What happen if my funding is not accepted?</a></li>
+  <li><a href="#time">How long does it take?</a></li>
+</ul>
+<h2 id="involve">What does this involve?</h2>
+
+<p>We have tried to make the process simple and as quick as possible. There is no form or template.</p>
+<p>Applicants can provide as little or as much information as they wish. A single page is the right place to start.</p>
+<p>SoSEP funding is available for a wide range of activities.</p>
+<p>Your funding enquiry should be emailed to <a href="mailto:SoSEP@scotborders.gov.uk">SoSEP@scotborders.gov.uk</a></p>
+
+<h2 id="eligible">Am I eligible?</h2>
+<p>Your project needs to:</p>
+<uL>
+  <li>have a clear link to SOSEP priorities</li>
+  <li>be something that clearly could not have happen otherwise and be over and above business as usual</li>
+  <li>be ambitious and aspire to make a significant difference</li>
+  <li>aim to deliver inclusive growth</li>
+  <li>involve partnership (ideally more than one SOSEP partner)</li>
+  <li>have other funding sources</li> 
+  <li>explain why it can’t be funded through existing resources, other funding committed, governance and project management</li>
+</uL>
+
+
+<details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+          Learn  about SOSEP's 2019/2020 Operating plan
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        The plan outlines the focus of activity of the South of Scotland Economic Partnership during 2019/20 and is linked to the work of the SoSEP Theme Groups. <br>
+        The focus of the Plan supports the delivery of the Shaping Principles and Strategic Objectives which cover both the work of SoSEP as well as development work to support the introduction of the South of Scotland Enterprise (SOSE) Agency in 2020.<br>
+        The plan also includes reference to a new Regional Skills Investment Plan for the South of Scotland, and applications with an education, skills or training should link to the themes within this document.
+    </div>
+  </details>
+
+
+  <h2 id="who">Who will look at my enquiry?</h2>
+  <p>  Your enquiry will be allocated to a SOSEP Partner. They will consider it and make a recommendation for the SOSEP Exec Team. <br>
+    If your enquiry is suitable, they will proceed to a formal application.</p>
+  <p>If your enquiry is not suitable, then you will receive some recommendations and the reasons we can't proceed. The SOSEP and Scottish Government will be advised too. Where possible, we will look at alternative support for you.</p>
+
+
+<details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+          Learn  the SoSEP Board, SoSEP Executive Team and SoSEP Partners
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        The South of Scotland Economic Partnership (SoSEP) was established in January 2018 and brings together the seven key public sector organisations that support economic growth in the South of Scotland together with the private, third and education sectors.<br>
+        The SoSEP Executive Team brings together the 7 public sector organisations (SoSEP Partners) and drawing on their staff and resources from their organisations they deliver the partnership’s agreed priorities. The seven SoSEP Partners are:<br>
+        <ul>
+            <li>Scottish Enterprise</li>
+            <li>Scottish Funding Council</li> 
+            <li>Skills Development Scotland</li>
+            <li>Visit Scotland</li>
+            <li>Highlands and Islands Enterprise</li>
+            <li>Scottish Borders Council</li>
+            <li>Dumfries and Galloway Council</li>
+        </ul>
+    </div>
+  </details>
+
+  <h2 id="suitable">If my enquiry is suitable, what happen next?</h2>
+<ol class="govuk-list govuk-list--number">
+  <li>A member of the SOSEP Exec Team acts as a 'Sponsor' to support and develop a formal application with you</li>
+  <li>We develop your formal application, setting out key information, justification and strategic fit</li>
+  <li>Your sponsor presents your application to the SOSEP Executive team and Scottish Government officials</li>
+  <li>You receive feedback and might be asked for additional information</li>
+  <li>A recommendation is made to the SOSEP board whether to support funding</li>
+  <li>Your application is shared with the SOSEP Theme Group leads for feedback</li>
+  <li>The SOSEP board considers your application and recommendation made to the Scottish Government</li>
+</ol>
+
+<details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+          Learn  about the Theme Groups
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+        The partnership has the following seven Theme Groups:
+        <ul>
+            <li>Business Support</li>
+            <li>Communities</li>
+            <li>Infrastructure</li>
+            <li>Key Sectors (including Tourism)</li>
+            <li>Farming, Fisheries and Forestry</li>
+            <li>Education and Skills</li>
+            <li>Arts and Culture</li>
+        </ul>
+        The work of each Theme Group is important in developing the potential work of the Partnership and supporting the future work of SOSE. Each SoSEP Theme Group has a Lead Officer plus Supporting Officers. The Board Members that lead each Theme Group will provide additional feedback on the applications that come forward to ensure that projects are appropriately aligned with the ongoing thinking of the relevant Theme Groups.
+
+    </div>
+  </details>
+
+  <h2 id="yes">What happen if my funding is accepted?</h2>
+  <ul>
+    <li>A Scottish Government Grant Offer Letter (GOL) is issued for the SOSEP Partner who then issues a GOL to you</li>
+    <li>Payment is made in line with the GOL</li>
+    <li>you or the project lead provides quaterly monitoring report to the SOSEP partner</li>
+  </ul>
+
+
+  <h2 id="no">What happen if my funding is not accepted?</h2>
+  <p>Concerns are shared with you, the SoSEP Chair and Lead Officer and the Partner Organisation.</p>
+  <p>When the concerns are addressed, the funding might be agreed, or your application might be re-subimetted to the SOSEP Board or Exec Team</p>
+  <p>If the concerned are not addressed, then no further action will be taken and your application is closed.</p>
+
+  <h2 id="time">How long does it take?</h2>
+  <p>The length of time for each project will vary considerably – applicants should plan on the approval process being at least 4 months.</p>
+    <ul>
+      <li>Initial funding enquiries are considered by the SoSEP Executive Team who meet every 4-6 weeks and the appropriate SoSEP Theme group</li>
+      <li>If it is thought the project meets the criteria a formal application/ business case is submitted to the SoSEP Board</li>
+      <li>The Board meets approximately every 6 weeks</li>
+      <li>The Board makes a decision whether to recommend funding to Scottish Government</li>
+      <li>Scottish Government has the final decision</li>
+    </ul>
+
+    <h2>See the document this page is based on:</h2>
+    <p><a href="{{ asset_path }}/images/SOSEP_Funding_Flow_Chart.pdf" target="_blank" rel="noopener"><strong>Funding flow chart</strong></a></p>
+</div>
+{% endblock %}
