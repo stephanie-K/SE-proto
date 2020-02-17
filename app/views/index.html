@@ -2,7 +2,7 @@
 {% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
 
 {% block pageTitle %}
-  SE Prototype
+  SOSE Prototype
 {% endblock %}
 
 {% block postHeader %}
@@ -12,10 +12,6 @@
     {
       text: "Home",
       href: "/"
-    },
-    {
-      text: "SoSE",
-      href:"/sose"
     }
   ]
 }) }}
@@ -26,37 +22,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        Scottish Enterprise Prototype
+        South of Scotland Enterprise Prototype
 
         <span class="govuk-caption-xl">Based on GOV.UK Prototype Kit - {{releaseVersion}}</span>
       </h1>{{releaseVersion | log }}
 
-      <p style="color: #b10e1e">To come back here at any time, click/tap:</p>
-           <ul class="govuk-list govuk-list--bullet se">
-            <li>on the logo on the top left</li>
-            <li>"Home" in the breadcrumbs</li>
-           </ul>
+      <p style="color: #b10e1e">To come back here at any time, click/tap: on the logo on the top left</p>
+ 
 
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-top: 1px solid #3a817e">
 
       <h2 class="govuk-heading-m se govuk-!-margin-top-4">
-        Changes done:
+        This is a prototype
       </h2>
       <ul class="govuk-list govuk-list--bullet se">
-        <li>add the favicon in the images, and use it in a copy of the special layout for SE:  layout_se.html</li>
-        <li>add some code to customise the header and the footer in the layout, and some CSS in se.scss</li>
-        <li>for the breadcrumbs, I have to modify the macro for the general template in node-modules>govuk-frontend>template.njk to be able to declare a block called "postHeader" 
-        to be generated just after the header. For more advanced behaviour I would need to change the existing macro for the breadcrumbs to add specific se class in: node-modules>govuk-frontend>components>breadcrumbs>template.njk 
-        <span style="color: #b10e1e"> Note that these changes could disappear if you run a "npm install"</span></li>
-        <li>create general page: <a href="/a11y.html" >Accessibility</a> , <a href="/privacy.html" >Privacy notice</a> , <a href="/cookies.html">Cookies policy</a> , <a href="/terms.html">Terms of use</a></li> 
-        <li>create a form for <a href="/contact-us.html">Contact us</a></li>
-        <li>create 3 example pages: <a href="/make-it-to-market-grant.html">Make it to Market grant</a> , and two pages to reach it <a href="/growing.html">Growing your business</a> and <a href="/funding.html">Funding and grants</a></li>
-        <li>create a <a href="/not-ready.html">Not ready page</a>
+        <li>this is not how the future website will look</li>
+        <li>we are not testing you, but the website</li>
+        <li>you can do nothing wrong</li>
+        <li>Thank you for your help</li>
       </ul>
+
+      {% from "button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Let's start",
+          classes: "govuk-!-margin-bottom-9 , govuk-!-margin-top-9 , button-se",
+          href: "/home.html"
+        }) }}
+
 
      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-top: 1px solid #3a817e">
 
-      <h2 class="govuk-heading-m se">Examples and documentation</h2>
+      <h2 class="govuk-heading-m se">Examples and documentation for the prototype</h2>
 
       <ul class="govuk-list govuk-list--bullet se">
         <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
