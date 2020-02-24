@@ -1,182 +1,72 @@
-{% extends "template.njk" %}
 
-{% block headIcons %}
-  <link rel="shortcut icon" href="{{ asset_path }}images/se.ico?0.18.3" type="image/x-icon" /> <!-- this is where I change the code to use a SE favicon -->
-  <!--link rel="mask-icon" href="{{ asset_path }}images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c"-->
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset_path }}images/apple-touch-icon-152x152.png?0.18.3">
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset_path }}images/apple-touch-icon-120x120.png?0.18.3">
-  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset_path }}images/apple-touch-icon-76x76.png?0.18.3">
-  <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.18.3">
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  SE Prototype
 {% endblock %}
 
-{% block head %}
-<!-- add my own stylesheet -->
-  <link href="/public/stylesheets/sose.css" media="all" rel="stylesheet" type="text/css">
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/"
+    },
+    {
+      text: "SoSE",
+      href:"/sose"
+    }
+  ]
+}) }}
 {% endblock %}
 
-{% block header %}
-<!-- cookies not included here // but header code added, also see node_modules/govuk-frontend/components/header for the Scss and the template.njk-->
-<!-- added code below for branded header -->
-<header class="govuk-header" role="banner" data-module="header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo">
-      <span class="govuk-header__logotype">
-        <a href="/index.html" id="logo-se"><image src="{{ asset_path }}/images/logoSOSE.png" alt="South of Scotland Logo" width="202" height="100"></image></a>
-      </span>
-    </div>
+{% block content %}
 
-    <div class="govuk-header__content">
-    <span class="se-service-name">
-      This is a prototype 
-    </span>
-  <!-- the code below is in case we had navigation links in the header - not used just now -->
-    {% if params.navigation %}
-    <button type="button" role="button" class="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
-    <nav>
-      <ul id="navigation" class="govuk-header__navigation {{ params.navigationClasses if params.navigationClasses }}" aria-label="Top Level Navigation">
-        {% for item in params.navigation %}
-          {% if item.href and item.text %}
-            <li class="govuk-header__navigation-item{{ ' govuk-header__navigation-item--active' if item.active }}">
-              <a class="govuk-header__link" href="{{ item.href }}"{% for attribute, value in item.attributes %} {{attribute}}="{{value}}"{% endfor %}>
-                {{ item.text }}
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Scottish Enterprise Prototype
+
+        <span class="govuk-caption-xl">Based on GOV.UK Prototype Kit - {{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+
+      <p style="color: #b10e1e">To come back here at any time, click/tap:</p>
+           <ul class="govuk-list govuk-list--bullet se">
+            <li>on the logo on the top left</li>
+            <li>"Home" in the breadcrumbs</li>
+           </ul>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-top: 1px solid #3a817e">
+
+      <h2 class="govuk-heading-m se govuk-!-margin-top-4">
+        Changes done:
+      </h2>
+      <ul class="govuk-list govuk-list--bullet se">
+        <li>add the favicon in the images, and use it in a copy of the special layout for SE:  layout_se.html</li>
+        <li>add some code to customise the header and the footer in the layout, and some CSS in se.scss</li>
+        <li>for the breadcrumbs, I have to modify the macro for the general template in node-modules>govuk-frontend>template.njk to be able to declare a block called "postHeader" 
+        to be generated just after the header. For more advanced behaviour I would need to change the existing macro for the breadcrumbs to add specific se class in: node-modules>govuk-frontend>components>breadcrumbs>template.njk 
+        <span style="color: #b10e1e"> Note that these changes could disappear if you run a "npm install"</span></li>
+        <li>create general page: <a href="/a11y.html" >Accessibility</a> , <a href="/privacy.html" >Privacy notice</a> , <a href="/cookies.html">Cookies policy</a> , <a href="/terms.html">Terms of use</a></li> 
+        <li>create a form for <a href="/contact-us.html">Contact us</a></li>
+        <li>create 3 example pages: <a href="/make-it-to-market-grant.html">Make it to Market grant</a> , and two pages to reach it <a href="/growing.html">Growing your business</a> and <a href="/funding.html">Funding and grants</a></li>
+        <li>create a <a href="/not-ready.html">Not ready page</a>
       </ul>
-    </nav>
-    {% endif %}
+
+     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" style="border-top: 1px solid #3a817e">
+
+      <h2 class="govuk-heading-m se">Examples and documentation</h2>
+
+      <ul class="govuk-list govuk-list--bullet se">
+        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
+        <li>
+          <a href="https://design-system.service.gov.uk">
+            GOV.UK Design System
+          </a>
+        </li>
+      </ul>
     </div>
-  </div>
-</header>
-{% endblock %}
+</div>
 
-{% block footer %}
-<!-- added code below for branded footer -->
-<footer class="govuk-footer" role="contentinfo">
-  <div class="govuk-width-container">
-      <div class="govuk-footer__section">
-        <h2 class="govuk-footer__heading">GET IN TOUCH</h2>
-        <ul class="govuk-footer__list ">
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/contact-us.html">
-              Contact us
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Complaints
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              FOI
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="govuk-footer__section">
-        <h2 class="govuk-footer__heading">WHO WE ARE</h2>
-        <ul class="govuk-footer__list ">
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Our organisation
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Our Board
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Missions and targets
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-             Performance information
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="govuk-footer__section">
-        <h2 class="govuk-footer__heading">ABOUT OUR REGION</h2>
-        <ul class="govuk-footer__list ">
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Regional projects and initiatives
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Community Support
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Business support
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Events
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Case studies
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="govuk-footer__section">
-        <h2 class="govuk-footer__heading">WORK FOR US</h2>
-        <ul class="govuk-footer__list ">
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              Current vacancies
-            </a>
-          </li>
-          <li class="govuk-footer__list-item">
-            <a class="govuk-footer__link" href="/not-ready.html">
-              How our job application process works
-            </a>
-          </li>
-        </ul>
-      </div>
-
-
-<br><br><br>
-
-      <div class="govuk-footer__meta class="se-footer"">
-        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-          <ul class="govuk-footer__inline-list">
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="/a11y.html">Accessibility</a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="/cookies.html">Cookie policy</a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="/privacy.html">Privacy notice</a>
-            </li>
-            <li class="govuk-footer__inline-list-item">
-              <a class="govuk-footer__link" href="/terms.html">Terms of use</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="govuk-footer__section">
-        <span><a class="govuk-footer__link ft-right" href="/prototype-admin/clear-data" style="color : #3F2A56; font-weight: 600 ;">Clear prototype data</a></span>
-      </div>
-  </div>
-</footer>
-{% endblock %}
-
-{% block bodyEnd %}
-  {% include "includes/scripts.html" %}
 {% endblock %}
